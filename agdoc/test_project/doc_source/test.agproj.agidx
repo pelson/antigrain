@@ -1,0 +1,38 @@
+\outdir[test_project/output]
+\file[test.agdoc; ext=.html;]{
+\toc
+{
+    \toc1[Introduction; anchor="toc0001";]{
+        \toc2[Subtible of the Introduction; anchor="toc0002";]{}
+        \toc2[The Proposal (Another subtitle); anchor="toc0003";]{}}
+    \toc1[Example of code; anchor="toc0004";]{}
+    \toc1[AGDoc Formatting; anchor="toc0005";]{
+        \toc2[Paragraphs; anchor="toc0006";]{}
+        \toc2[Bold, Italic, Underline, Quoted, Code, etc...; anchor="toc0007";]{}
+        \toc2[ Tables; anchor="toc0008";]{
+            \toc3[ Space separated values tables (ssv_table); anchor="toc0009";]{}
+            \toc3[ Vertical bar separated tables (vbar_table); anchor="toc0010";]{}
+            \toc3[ Empty line separated tables (eln_table); anchor="toc0011";]{}}
+        \toc2[Linking; anchor="toc0012";]{}
+        \toc2[Images; anchor="toc0013";]{
+            \toc3[Left aligned images; anchor="toc0014";]{}
+            \toc3[Right aligned image; anchor="toc0015";]{}
+            \toc3[Inline images; anchor="toc0016";]{}
+            \toc3[Centered image; anchor="toc0017";]{
+                \toc4[Variant One; anchor="toc0018";]{}
+                \toc4[Variant Two; anchor="toc0019";]{}}
+            \toc3[External images; anchor="toc0020";]{}}}
+    \toc1[Itemized lists; anchor="toc0021";]{
+        \toc2[Ordered lists; anchor="toc0022";]{}
+        \toc2[Unordered lists; anchor="toc0023";]{}
+        \toc2[Mixed and Nested lists; anchor="toc0024";]{}}
+}
+
+\title{AGDoc Test}
+\label[category="table"; anchor="TAB1";]{Table 1. Wiki- and TeX-like style formatting}
+\label[category="table"; anchor="TAB2";]{Table 2. Space separated values table}
+\label[category="table"; anchor="TAB3";]{Table 3. Vertical bar separated table}
+\label[category="table"; anchor="TAB4";]{Table 4. Empty line table}
+\label[category="figure"; anchor="FIG1";]{Left Image}
+
+}

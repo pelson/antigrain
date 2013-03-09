@@ -1,0 +1,6 @@
+*\.o
+*\.a
+
+agg-2.4/examples/X11/
+!agg-2.4/examples/X11/Makefile
+!agg-2.4/examples/X11/readme.txt

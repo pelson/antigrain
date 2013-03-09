@@ -1,0 +1,197 @@
+BODY
+{
+    font-family:$(main_font);
+    font-size:$(main_font_size);
+    color:$(main_color);
+    background-color:$(main_background);
+    text-align:justify;
+    padding:$(main_padding);
+}
+
+P, UL, OL, DL
+{
+    font-family:$(main_font);
+    font-size:$(main_font_size);
+    color:$(main_color);
+    margin-bottom:0px;
+    margin-top:0px;
+}
+
+
+.larger
+{
+    font-size:$(larger_font_size);
+}
+
+LI
+{
+    padding:$(less_padding)
+}
+
+HR
+{
+    color:$(hr_color)
+}
+
+H1
+{
+    font-family:$(main_font);
+    font-size:$(title_font_size);
+    font-weight:bolder;
+    text-align:center;
+    color:$(toc_color); 
+}
+
+H1 SPAN.subtitle
+{ 
+    font-family:$(main_font);
+    font-size:$(subtitle_font_size);
+    font-weight:lighter; 
+}
+
+
+H2
+{
+    font-family:$(main_font);
+    font-size:$(h1_font_size);
+    font-weight:normal;
+    text-align:left;
+    color:$(toc_color);
+}
+
+H3
+{
+    font-family:$(main_font);
+    font-size:$(h2_font_size);
+    font-weight:normal;
+    text-align:left;
+    color:$(toc_color); 
+}
+
+H4
+{
+    font-family:$(main_font);
+    font-size:$(h3_font_size);
+    font-weight:bold;
+    text-align:left;
+    color:$(toc_color); 
+}
+
+H5
+{ 
+    font-family:$(main_font);
+    font-size:$(h4_font_size);
+    font-weight:bold;
+    text-align:left;
+    color:$(toc_color);
+}
+
+TABLE
+{
+    margin:$(table_margin);
+}
+
+TD
+{
+    font-family:$(main_font);
+    font-size:$(main_font_size);
+}
+
+TH
+{
+    font-family:$(main_font);
+    background-color:$(table_header_background);
+    font-size:$(main_font_size);
+}
+
+
+PRE
+{
+    padding: $(main_padding);
+    border: gray 1px solid;
+    background-color:$(code_background);
+    color:$(code_main_color);
+    font-family:$(mono_font);
+    font-size:$(main_font_size);
+    margin:0px;
+}
+
+TT, CODE
+{
+    font-family:$(mono_font);
+    font-size:$(larger_font_size);
+    color:$(mono_color);
+}
+
+.warning, .warning TD
+{
+    background-color:$(warning_background);
+    color:$(warning_color);
+    padding:0.5em;
+    font-family:$(main_font);
+    font-size:$(main_font_size);
+    text-align:justify;
+}
+
+.note, .note TD
+{
+    background-color:$(note_background);
+    color:$(note_color);
+    padding:0.5em;
+    font-family:$(main_font);
+    font-size:$(main_font_size);
+    text-align:justify;
+}
+
+.tip, .tip TD
+{
+    background-color:$(tip_background);
+    color:$(tip_color);
+    padding:0.5em;
+    font-family:$(main_font);
+    font-size:$(main_font_size);
+    text-align:justify;
+}
+
+.tbl TD
+{
+    background-color:$(table_background);
+    font-family:$(main_font);
+    font-size:$(main_font_size);
+    text-align:left;
+    padding:$(less_padding);
+}
+
+.toc TD
+{
+    font-family:$(main_font);
+    text-align:left;
+    padding:$(less_padding);
+}
+
+.title {font-family:$(main_font);}
+
+.warning P,
+.warning PRE,
+.note P,
+.note PRE,
+.tip P,
+.tip PRE {margin:0.3em 0em 0.1em 0em;}
+
+.warning .code {background-color:$(warning_background);}
+.note .code    {background-color:$(note_background);}
+.tip .code     {background-color:$(tip_background);}
+
+A         {text-decoration:none; color:$(href_color);}
+A:visited {text-decoration:none; color:$(href_visited_color);}
+A:link    {text-decoration:none;}
+A:hover   {text-decoration:underline;}
+
+span.rem  {color:$(code_rem_color);}
+span.kw1  {color:$(code_kw1_color);}
+span.kw2  {color:$(code_kw2_color);}
+span.kw3  {color:$(code_kw3_color);}
+span.kw4  {color:$(code_kw4_color);}
+span.op   {color:$(code_op_color);}
+span.str  {color:$(code_str_color);}
+span.num  {color:$(code_num_color);}

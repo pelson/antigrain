@@ -1,0 +1,37 @@
+\ext[.html]
+\outdir[../output]
+\config[../formatting_example.agtempl]
+
+\process_files [test.styles; ext=.css; variables_only=true]
+\copy_files    [*.gif *.png *.jp*g]
+\process_files [test.agdoc]
+
+
+%%*   Below is an example of working with sub-directories
+
+\process_dir[code; src=../..]
+{
+    \process_dir[include/]  { \process_code[agg_affine_matrix.h; lang=cpp] }
+    \process_dir[include/]  { 
+                              \process_code[*.h;       lang=cpp] 
+        \process_dir[ctrl/] { \process_code[*.h;       lang=cpp] }
+    }
+
+    \process_dir[src/]      { \process_code[*.cpp;     lang=cpp; exclude="*raster_fonts*"] }
+    \process_dir[examples/] { \process_code[*.h *.cpp; lang=cpp] }
+}
+
+
+\process_dir[test]
+{
+    \copy_files    [*.gif *.png *.jp*g]
+    \process_dir   [images]
+    {
+        \copy_files [*.gif *.png *.jp*g]
+    }
+    \process_files [test.agdoc]
+}
+
+\process_files[site_map.agdoc]
+
+*%%
