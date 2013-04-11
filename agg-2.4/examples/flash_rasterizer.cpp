@@ -370,6 +370,7 @@ public:
                 rasc.add_path(shape, m_shape.style(i).path_id);
             }
         }
+        agg::scanline_bin sl_bin;
         agg::render_scanlines_compound(rasc, sl, sl_bin, ren_base, alloc, style_handler);
         double tfill = elapsed_time();
 
