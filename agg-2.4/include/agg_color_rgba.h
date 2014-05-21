@@ -148,6 +148,24 @@ namespace agg
             return ret;
         }
 
+        rgba& operator+=(const rgba& c)
+        {
+            r += c.r;
+            g += c.g;
+            b += c.b;
+            a += c.a;
+            return *this;
+        }
+
+        rgba& operator*=(double k)
+        {
+            r *= k;
+            g *= k;
+            b *= k;
+            a *= k;
+            return *this;
+        }
+
         //--------------------------------------------------------------------
         static rgba no_color() { return rgba(0,0,0,0); }
 
@@ -161,6 +179,16 @@ namespace agg
         }
 
     };
+
+    inline rgba operator+(const rgba& a, const rgba& b)
+    {
+        return rgba(a) += b;
+    }
+
+    inline rgba operator*(const rgba& a, double b)
+    {
+        return rgba(a) *= b;
+    }
 
     //------------------------------------------------------------------------
     inline rgba rgba::from_wavelength(double wl, double gamma)
@@ -373,7 +401,22 @@ namespace agg
         //--------------------------------------------------------------------
         static AGG_INLINE value_type demultiply(value_type a, value_type b) 
         {
-            return (b == 0) ? 0 : value_type((a << base_shift) / b); 
+            if (a * b == 0)
+            {
+                return 0;
+            }
+            else if (a >= b)
+            {
+                return base_mask;
+            }
+            else return value_type((a * base_mask + (b >> 1)) / b); 
+        }
+
+        //--------------------------------------------------------------------
+        template<typename T>
+        static AGG_INLINE T downscale(T a) 
+        {
+            return a >> base_shift;
         }
 
         //--------------------------------------------------------------------
@@ -743,7 +786,22 @@ namespace agg
         //--------------------------------------------------------------------
         static AGG_INLINE value_type demultiply(value_type a, value_type b) 
         {
-            return (b == 0) ? 0 : value_type((a << base_shift) / b);
+            if (a * b == 0)
+            {
+                return 0;
+            }
+            else if (a >= b)
+            {
+                return base_mask;
+            }
+            else return value_type((a * base_mask + (b >> 1)) / b); 
+        }
+
+        //--------------------------------------------------------------------
+        template<typename T>
+        static AGG_INLINE T downscale(T a) 
+        {
+            return a >> base_shift;
         }
 
         //--------------------------------------------------------------------
@@ -1092,6 +1150,13 @@ namespace agg
         static AGG_INLINE value_type demultiply(value_type a, value_type b) 
         {
             return (b == 0) ? 0 : value_type(a / b);
+        }
+
+        //--------------------------------------------------------------------
+        template<typename T>
+        static AGG_INLINE T downscale(T a) 
+        {
+            return a;
         }
 
         //--------------------------------------------------------------------
